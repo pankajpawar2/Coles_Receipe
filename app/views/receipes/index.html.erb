@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<h1>Receipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Receipe name</th>
+      <th>Image url</th>
+      <th>Prep time minutes</th>
+      <th>Cooking time minutes</th>
+      <th>Difficulty level</th>
+      <th>Servings</th>
+      <th>Ingredients</th>
+      <th>How to cook</th>
+      <th>Collection</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receipes.each do |receipe| %>
+      <tr>
+        <td><%= receipe.receipe_name %></td>
+        <td><%= receipe.image_url %></td>
+        <td><%= receipe.prep_time_minutes %></td>
+        <td><%= receipe.cooking_time_minutes %></td>
+        <td><%= receipe.difficulty_level %></td>
+        <td><%= receipe.servings %></td>
+        <td><%= receipe.ingredients %></td>
+        <td><%= receipe.how_to_cook %></td>
+        <td><%= receipe.collection ? receipe.collection.category_name : "" %></td>
+        <td><%= link_to 'Show', collection_receipe_path(@collection, receipe) %></td>
+        <td><%= link_to 'Edit', edit_collection_receipe_path(@collection, receipe) %></td>
+        <td><%= link_to 'Destroy', collection_receipe_path(@collection, receipe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receipe', new_collection_receipe_path %>

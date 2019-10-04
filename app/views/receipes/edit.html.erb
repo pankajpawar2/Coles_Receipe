@@ -1,0 +1,6 @@
+<h1>Editing Receipe</h1>
+
+<%= render 'form', collection: @collection, receipe: @receipe  %>
+
+<%= link_to 'Show', collection_receipe_path(@collection,@receipe) %> |
+<%= link_to 'Back', collection_receipes_path(@collection) %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category name:</strong>
+  <%= @collection.category_name %>
+</p>
+
+<p>
+  <strong>Receipes:</strong><br>
+  <% @receipes.each do |receipe| %>
+  #######################################
+    <ul>
+      <li>
+        <h4>Receipe name</h4><%= receipe.receipe_name %>
+      </li>
+      <li>
+        <h4>Difficulty Level</h4><%= receipe.difficulty_level %>
+      </li>
+    </ul>
+      
+    
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %> |
+<%= link_to 'Receipes', collection_receipes_path(@collection) %>
